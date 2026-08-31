@@ -197,6 +197,8 @@ The frontend will usually run on:
 
 http://localhost:5173
 
+```
+
 ## 🔐 Environment Variables
 
 CareerConnect requires environment variables for database connection, authentication, cloud image storage, and API configuration.
