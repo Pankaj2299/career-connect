@@ -28,6 +28,9 @@ const PORT = process.env.PORT || 3000
 
  // API'S
 
+ app.get("/",(req,res)=>{
+    return res.status(200).send("CareerConnect Backend is running successfully");
+ })
  app.use("/api/v1/user",userRoute)
  app.use("/api/v1/company",companyRoute)
  app.use("/api/v1/job",jobRoute)
