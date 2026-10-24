@@ -8,6 +8,14 @@ Students can create an account, manage their profile, browse and search for jobs
 
 ## 🚀 Features
 
+### 🧠 Technical Highlights
+
+- *State Management:* Utilized Redux Toolkit to prevent redundant API calls and manage global state efficiently across dynamic UI components.
+- *Security:* Implemented Role-Based Access Control (RBAC) with HTTP-only cookies and bcrypt password hashing to secure distinct workflows.
+- *Optimized Storage:* Integrated Multer and Cloudinary API for direct cloud media uploads, reducing server payload and ensuring fast CDN delivery.
+- *Advanced Queries:* Engineered complex MongoDB aggregation pipelines for robust job search, filtering, and duplicate application prevention.
+
+
 ### 👨‍🎓 Student / Job Seeker
 
 - User registration and login
@@ -139,7 +147,7 @@ Follow the steps below to run CareerConnect locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Pankaj2299/career-connect.git
+git clone [https://github.com/Pankaj2299/career-connect.git]
 
 Move into the project directory:
 
