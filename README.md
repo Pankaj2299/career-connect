@@ -148,22 +148,29 @@ Follow the steps below to run CareerConnect locally.
 
 ```bash
 git clone [https://github.com/Pankaj2299/career-connect.git]
+```
 
 Move into the project directory:
-
+```
 cd CareerConnect
+```
+
 2. Backend Setup
 
 Open the backend directory:
-
+```
 cd backend
+```
 
 Install backend dependencies:
 
+```
 npm install
+```
 
 Create a .env file inside the backend directory:
 
+```
 MONGO_URI =""
 PORT =""
 SECRET_KEY =""
@@ -172,10 +179,12 @@ API_KEY=""
 API_SECRET=""
 EMAIL_USER=""
 EMAIL_PASS=""
-
+```
 Start the backend development server:
 
+```
 npm run dev
+```
 
 The backend will run on:
 
@@ -185,218 +194,205 @@ http://localhost:8000
 
 Open a new terminal and move into the frontend directory:
 
+```
 cd frontend
+```
 
 Install frontend dependencies:
 
+```
 npm install
+```
 
 Create a .env file inside the frontend directory if your project uses frontend environment variables.
 
 Example:
 
+```
 VITE_API_BASE_URL=http://localhost:8000
+```
 
 Start the frontend development server:
 
+```
 npm run dev
+```
 
 The frontend will usually run on:
 
 http://localhost:5173
 
-```
+
 
 ## 🔐 Environment Variables
 
 CareerConnect requires environment variables for database connection, authentication, cloud image storage, and API configuration.
 
-Backend Environment Variables
-Variable	Description
-PORT	Port number for the backend server
-MONGO_URI	MongoDB connection string
-JWT_SECRET_KEY	Secret key used for JWT authentication
-CLOUD_NAME	Cloudinary cloud name
-API_KEY	Cloudinary API key
-API_SECRET	Cloudinary API secret
-Frontend Environment Variables
-Variable	Description
-VITE_API_BASE_URL	Backend API base URL
+### Backend Environment Variables
 
+| Variable | Description |
+|----------|-------------|
+| `PORT` | Port number for the backend server |
+| `MONGO_URI` | MongoDB connection string |
+| `JWT_SECRET_KEY` | Secret key used for JWT authentication |
+| `CLOUD_NAME` | Cloudinary cloud name |
+| `API_KEY` | Cloudinary API key |
+| `API_SECRET` | Cloudinary API secret |
 
+### Frontend Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_BASE_URL` | Backend API base URL |
+
+---
 
 ## 🗄️ Database
 
-CareerConnect uses MongoDB as its database.
-
-The application uses Mongoose to interact with MongoDB.
+CareerConnect uses MongoDB as its database. The application uses Mongoose to interact with MongoDB.
 
 The main data models include:
+- User
+- Company
+- Job
+- Application
 
-User
-Company
-Job
-Application
+*Make sure MongoDB is configured correctly before starting the backend server.*
 
-Make sure MongoDB is configured correctly before starting the backend server.
+---
 
 ## ☁️ Cloudinary Setup
 
-CareerConnect uses Cloudinary for image storage.
+CareerConnect uses Cloudinary for image storage. Cloudinary is used for:
+- Student profile photos
+- Recruiter profile photos
+- Company logos
 
-Cloudinary is used for:
+**To configure Cloudinary:**
+1. Create a Cloudinary account.
+2. Open your Cloudinary dashboard.
+3. Copy your Cloud Name.
+4. Copy your API Key.
+5. Copy your API Secret.
+6. Add these values to the backend `.env` file.
 
-Student profile photos
-Recruiter profile photos
-Company logos
-
-To configure Cloudinary:
-
-Create a Cloudinary account.
-Open your Cloudinary dashboard.
-Copy your Cloud Name.
-Copy your API Key.
-Copy your API Secret.
-Add these values to the backend .env file.
-
-Example:
-
+**Example:**
+```env
 CLOUD_NAME=your_cloudinary_cloud_name
 API_KEY=your_cloudinary_api_key
 API_SECRET=your_cloudinary_api_secret
+```
 
 ## 🔐 Authentication & Authorization
 
-CareerConnect uses JWT-based authentication with HTTP cookies.
-
-The application provides:
-
-Secure user authentication
-Login and logout
-Email verification
-Role-based access control
-Protected routes
-Recruiter-only routes
-Student-specific functionality
-Authentication middleware
-Authorization middleware
+CareerConnect uses JWT-based authentication with HTTP cookies. The application provides:
+- Secure user authentication
+- Login and logout
+- Email verification
+- Role-based access control
+- Protected routes
+- Recruiter-only routes
+- Student-specific functionality
+- Authentication & Authorization middleware
 
 There are two main user roles:
 
-Student
+**Student** can:
+- Manage their profile
+- Browse jobs
+- Search jobs
+- View job details
+- Apply for jobs
 
-Students can:
+**Recruiter** can:
+- Manage their profile
+- Create & manage companies
+- Post, edit, and delete jobs
+- View applicants
+- Manage applications
 
-Manage their profile
-Browse jobs
-Search jobs
-View job details
-Apply for jobs
-Recruiter
-
-Recruiters can:
-
-Manage their profile
-Create companies
-Manage companies
-Post jobs
-Edit jobs
-Delete jobs
-View applicants
-Manage applications
+---
 
 ## 📧 Email Verification
 
-CareerConnect includes email verification for user accounts.
+CareerConnect includes email verification for user accounts. Users are required to verify their email address during the registration process before accessing the application's protected functionality.
 
-Users are required to verify their email address during the registration process before accessing the application's protected functionality.
+---
 
 ## 📱 Responsive Design
 
-The frontend is designed to work across different screen sizes.
-
-Supported layouts include:
-
-Desktop
-Tablet
-Mobile
+The frontend is designed to work across different screen sizes. Supported layouts include:
+- Desktop
+- Tablet
+- Mobile
 
 The navigation bar also provides separate desktop and mobile navigation experiences.
 
+---
+
 ## 🔎 Job Search & Browsing
 
-Students can browse available job postings and search for jobs based on available job information.
+Students can browse available job postings and search for jobs based on available job information. Each job provides details such as:
+- Job title & Company
+- Location & Salary
+- Job type & Experience level
+- Number of positions
+- Description & Requirements
+- Total applicants & Posted date
 
-Each job provides details such as:
-
-Job title
-Company
-Location
-Salary
-Job type
-Experience level
-Number of positions
-Description
-Requirements
-Total applicants
-Posted date
+---
 
 ## 📝 Job Applications
 
-Students can apply for available jobs.
+Students can apply for available jobs. The application system includes:
+- Job application creation
+- Application tracking
+- Duplicate application prevention
+- Applicant information
+- Recruiter access to applicants
 
-The application system includes:
+*Note: A student cannot apply to the same job multiple times.*
 
-Job application creation
-Application tracking
-Duplicate application prevention
-Applicant information
-Recruiter access to applicants
-
-A student cannot apply to the same job multiple times.
+---
 
 ## 🏢 Company Management
 
-Recruiters can manage their companies through the recruiter dashboard.
+Recruiters can manage their companies through the recruiter dashboard. Company management includes:
+- Create, view, and update company
+- Company description & website
+- Company location
+- Company logo upload & update
 
-Company management includes:
-
-Create company
-View company
-Update company
-Company description
-Company website
-Company location
-Company logo upload
-Company logo update
+---
 
 ## 💼 Job Posting Management
 
-Recruiters can manage their job postings.
+Recruiters can manage their job postings. Job management includes:
+- Create, edit, and delete job
+- View posted jobs
+- View job details & applicants
 
-Job management includes:
+*Job requirements are stored as an array and displayed individually on the job details page.*
 
-Create job
-Edit job
-Delete job
-View posted jobs
-View job details
-View applicants
 
-Job requirements are stored as an array and displayed individually on the job details page.
 
 ## ▶️ Running the Project
 
 To run the complete application, start both frontend and backend servers.
 
-Terminal 1 — Backend
+**Terminal 1 — Backend**
+```bash
 cd backend
 npm install
 npm run dev
-Terminal 2 — Frontend
+```
+
+**Terminal 2 — Frontend**
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 Then open the frontend URL shown by Vite in your browser.
 
@@ -404,34 +400,35 @@ Then open the frontend URL shown by Vite in your browser.
 
 For development, make sure:
 
-MongoDB is connected
-Backend server is running
-Frontend server is running
-Required environment variables are configured
-Cloudinary credentials are configured
-Frontend API configuration points to the backend
+- MongoDB is connected
+- Backend server is running
+- Frontend server is running
+- Required environment variables are configured
+- Cloudinary credentials are configured
+- Frontend API configuration points to the backend
 
 ## 📌 Important Notes
-Do not commit .env files.
-Keep JWT and Cloudinary credentials private.
-Make sure MongoDB is accessible before starting the backend.
-Run frontend and backend separately during development.
-Use the appropriate user role to access recruiter and student functionality.
+
+- Do not commit .env files.
+- Keep JWT and Cloudinary credentials private.
+- Make sure MongoDB is accessible before starting the backend.
+- Run frontend and backend separately during development.
+- Use the appropriate user role to access recruiter and student functionality.
 
 ## 🚀 Future Improvements
 
 Possible future improvements include:
 
-Advanced job filtering
-Job categories
-Skills-based job matching
-Recruiter dashboard analytics
-Application status tracking
-Saved jobs
-Job recommendations
-Pagination
-Notifications
-Admin dashboard
+- Advanced job filtering
+- Job categories
+- Skills-based job matching
+- Recruiter dashboard analytics
+- Application status tracking
+- Saved jobs
+- Job recommendations
+- Pagination
+- Notifications
+- Admin dashboard
 
 ## 👨‍💻 Author
 
