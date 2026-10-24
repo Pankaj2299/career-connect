@@ -12,7 +12,7 @@ function AppliedJobs() {
     }
 
     return (
-        <div className="rounded-xl border border-gray-200 overflow-hidden">
+        <div className="rounded-xl border border-gray-200 overflow-x-auto">
             <Table>
                 <TableCaption>
                     Track the status of your job applications.
