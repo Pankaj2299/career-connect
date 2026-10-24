@@ -28,28 +28,30 @@ function Profile() {
          <div className="bg-[#F8FAFC] min-h-screen py-8">
 
             <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-sm p-8 mt-8">
-                <div className='flex justify-between items-center'>
-                    <div className='flex flex-col md:flex-row items-start md:items-center gap-4'>
-                        <Avatar className="h-15 w-15 md:h-20 md:w-20 lg:h-28 lg:w-28 border-2 border-blue-100">
-                            <AvatarImage 
+               <div className='relative flex flex-col md:flex-row items-start gap-4'>
+                    <Avatar className="h-15 w-15 md:h-20 md:w-20 lg:h-28 lg:w-28 border-2 border-blue-100 shrink-0">
+                        <AvatarImage 
                             src={user?.profile?.profilePhoto}
-                             alt="profile"
-                             className="object-cover"
-                             />
-                            <AvatarFallback className='text-2xl md:text-4xl lg:text-6xl font-bold'>
-                                {user?.fullname?.charAt(0).toUpperCase()}
-                            </AvatarFallback>
-                        </Avatar>
-                        <div>
-                            <h1 className="text-2xl font-bold text-[#111827]">{user?.fullname}</h1>
-                            <p className="text-gray-600 mt-1">
-                                {user?.profile?.bio || "No bio added"}
-                            </p>
-                        </div>
+                            alt="profile"
+                            className="object-cover"
+                        />
+                        <AvatarFallback className='text-2xl md:text-4xl lg:text-6xl font-bold'>
+                            {user?.fullname?.charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                    </Avatar>
+                    
+                    
+                    <div className="w-full mt-2 md:mt-0 md:pr-16 md:pt-4">
+                        <h1 className="text-2xl font-bold text-[#111827]">{user?.fullname}</h1>
+                        <p className="text-gray-600 mt-2 w-full text-justify md:text-left">
+                            {user?.profile?.bio || "No bio added"}
+                        </p>
                     </div>
+
+                    
                     <Button
                         variant="outline"
-                        className="rounded-full hover:bg-blue-50 hover:text-[#2563EB]"
+                        className="absolute top-0 right-0 rounded-full hover:bg-blue-50 hover:text-[#2563EB]"
                         onClick={() => setOpen(true)}
                     >
                         <Pen className="h-4 w-4" />
