@@ -178,7 +178,7 @@ CLOUD_NAME="your_cloudinary_cloud_name"
 API_KEY="your_cloudinary_api_key"
 API_SECRET="your_cloudinary_api_secret"
 EMAIL_USER="your_email_address@gmail.com"
-EMAIL_PASS="your_email_app_password"
+BREVO_API_KEY="your_brevo_api_key
 ```
 Start the backend development server:
 
