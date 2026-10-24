@@ -170,15 +170,15 @@ npm install
 
 Create a .env file inside the backend directory:
 
-```
-MONGO_URI =""
-PORT =""
-SECRET_KEY =""
-CLOUD_NAME =""
-API_KEY=""
-API_SECRET=""
-EMAIL_USER=""
-EMAIL_PASS=""
+```env
+MONGO_URI="your_mongodb_connection_string"
+PORT="8000"
+SECRET_KEY="your_jwt_secret_key"
+CLOUD_NAME="your_cloudinary_cloud_name"
+API_KEY="your_cloudinary_api_key"
+API_SECRET="your_cloudinary_api_secret"
+EMAIL_USER="your_email_address@gmail.com"
+EMAIL_PASS="your_email_app_password"
 ```
 Start the backend development server:
 
