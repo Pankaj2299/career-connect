@@ -1,8 +1,13 @@
 # CareerConnect 💼
 
 CareerConnect is a full-stack MERN-based job portal that connects students/job seekers with recruiters.
-
 Students can create an account, manage their profile, browse and search for jobs, view job details, and apply for jobs. Recruiters can create companies, manage company information, post jobs, manage job postings, and view applicants.
+
+
+
+## 🌐 Live Demo
+
+   [Visit CareerConnect ](https://career-connect-frontend-six.vercel.app/)   
 
 ---
 
